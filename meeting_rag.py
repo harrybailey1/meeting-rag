@@ -23,7 +23,7 @@ prompt = None
 if load_button: 
     if transcript is not None:
         text = transcript.getvalue()
-        docs = Document(text=text.decode('utf-8'))
+        docs = Document(page_content=text.decode('utf-8'))
         st.write(text)
         # Change UI
         st.text("You did it!")
