@@ -16,10 +16,9 @@ import streamlit as st
 # from langchain_community.utilities import WikipediaAPIWrapper
 
 # The UI Part
-st.title("👨‍💻 Wazzup!!!! Let's Chat with the Hansard Senate Estimates for Employment Department (DEWR) - 14 Feb 2024")
-prompt = st.text_area("Please enter what you want to know from the hearing for the Employment Department.")
-
-st.file_uploader("File upload")
+st.title("👨‍💻 Let's chat about the meeting!")
+transcript = st.file_uploader("Upload a .txt file of the meeting transcript here")
+prompt = st.text_area("Please enter what you want to know from the meeting.")
 
 # # Load VectorDB
 # if st.sidebar.button("Load meeting transcript into Vector DB if loading the page for the first time.", type="primary"): 

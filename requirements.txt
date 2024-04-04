@@ -1,0 +1,9 @@
+streamlit
+langchain
+sentence_transformers
+chromadb
+ollama
+langchain_openai
+langchain_community
+langchainhub
+langchain_text_splitters
