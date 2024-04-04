@@ -1,5 +1,4 @@
 import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import streamlit as st
 # import chromadb
