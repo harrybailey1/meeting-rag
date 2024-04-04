@@ -12,6 +12,7 @@ from langchain import hub
 from langchain.agents import AgentExecutor
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
+import ollama
 
 # The UI Part
 st.title("👨‍💻 Let's chat about the meeting!")
