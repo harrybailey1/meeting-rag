@@ -16,9 +16,17 @@ from langchain_community.utilities import WikipediaAPIWrapper
 # The UI Part
 st.title("👨‍💻 Let's chat about the meeting!")
 transcript = st.file_uploader("Upload a .txt file of the meeting transcript here", type=["txt"])
-prompt = st.text_area("Please enter what you want to know from the meeting.")
+load_button = st.button("Load meeting transcript.", type="primary")
+prompt = None
 
 # Load VectorDB
-if st.sidebar.button("Load meeting transcript into Vector DB if loading the page for the first time.", type="primary"): 
+if load_button: 
     if transcript is not None:
+        text = transcript.getvalue()
+        docs = Document(text=text.decode('utf-8'))
+        st.write(text)
+        # Change UI
         st.text("You did it!")
+        transcript = None
+        load_button = None
+        prompt = st.text_area("Please enter what you want to know from the meeting.")
