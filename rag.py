@@ -1,6 +1,5 @@
-from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
-from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.docstore.document import Document
 from langchain import hub
