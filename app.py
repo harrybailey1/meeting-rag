@@ -21,10 +21,9 @@ question = st.text_area(
 if load_button: 
     if uploaded_file:
         text = uploaded_file.getvalue()
-        st.write(text)
-        st.write(uploaded_file.read().decode())
+        print(text, type(text))
+        print(uploaded_file.read().decode(), type(uploaded_file.read().decode()))
         # docs = Document(page_content=text.decode('utf-8'))
-        st.write(text)
         # Change UI
         st.text("You did it!")
         transcript = None
