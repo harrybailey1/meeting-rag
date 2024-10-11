@@ -56,4 +56,4 @@ class RAG:
 
     # Return the result of running chain on query
     def process_query(self, query):
-        return self.chain.invoke(query)
+        return self.chain.stream(query)
