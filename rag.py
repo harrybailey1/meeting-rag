@@ -48,7 +48,7 @@ class RAG:
     def get_chain(self):
         chain = (
             {"context": self.retriever | self.format_retrieved_docs, "input": RunnablePassthrough()}
-            | self.prompt
+            | self.prompt_template
             | self.model
             # | StrOutputParser()
         )
