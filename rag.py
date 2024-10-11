@@ -35,9 +35,9 @@ class RAG:
 
     # Return retriever from document
     def get_retriever(self):
-        doc = Document(page_content=self.file_text, metadata={"source": "local"})
+        docs = [Document(page_content=self.file_text, metadata={"source": "local"})]
         # Split the document
-        texts = self.text_splitter.split_documents(doc)
+        texts = self.text_splitter.split_documents(docs)
         # Create a FAISS vector store with the embeddings
         vector_store = FAISS.from_documents(texts, self.embedding)
         # Create a retriever to search for documents
