@@ -33,4 +33,5 @@ if uploaded_file and prompt:
     # Run process query on RAG instance
     stream = RAG.process_query(prompt)
     # Write out stream on site
+    print(stream)
     st.write_stream(stream)
