@@ -28,7 +28,7 @@ if load_button:
 # Process question
 if uploaded_file and question:
     # Run process query on RAG instance
-    stream = RAG.process_query(question)
+    stream = rag.process_query(question)
     # Write out stream on site
     print(stream)
     st.write_stream(stream)
