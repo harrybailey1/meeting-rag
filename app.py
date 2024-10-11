@@ -23,7 +23,7 @@ if load_button:
         # Update IU
         warning_text.empty()
         # text = uploaded_file.getvalue()
-        text = uploaded_file.read().decode()
+        text = uploaded_file.getvalue().decode()
         # Set up RAG instance
         rag = RAG(text)
     else:
