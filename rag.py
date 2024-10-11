@@ -30,7 +30,7 @@ class RAG:
         self.chain = self.get_chain()
     
     # Function for combining multiple retrieved documents into text
-    def format_retrieved_docs(docs):
+    def format_retrieved_docs(self, docs):
         return "\n\n".join([d.page_content for d in docs])
 
     # Return retriever from document
