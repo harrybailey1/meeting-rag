@@ -38,6 +38,8 @@ if uploaded_file and question:
         # Run process query on RAG instance
         # stream = rag.process_query(question)
         # Write out stream on site
+        for chunk in rag.process_query(question):
+            print(chunk)
         st.write_stream(rag.process_query(question))
     else:
         # Update UI

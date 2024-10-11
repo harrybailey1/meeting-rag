@@ -50,7 +50,7 @@ class RAG:
             {"context": self.retriever | self.format_retrieved_docs, "input": RunnablePassthrough()}
             | self.prompt_template
             | self.model
-            # | StrOutputParser()
+            | StrOutputParser()
         )
         return chain
 
