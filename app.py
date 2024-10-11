@@ -18,7 +18,8 @@ question = st.text_area(
 # Load VectorDB
 if load_button: 
     if uploaded_file:
-        text = uploaded_file.getvalue()
+        # text = uploaded_file.getvalue()
+        text = uploaded_file.read().decode()
         # Set up RAG instance
         rag = RAG(text)
     else:
