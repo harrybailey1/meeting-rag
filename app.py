@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain import Document
+# from langchain import Document
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain.tools.retriever import create_retriever_tool
@@ -23,7 +23,7 @@ if load_button:
         text = uploaded_file.getvalue()
         st.write(text)
         st.write(uploaded_file.read().decode())
-        docs = Document(page_content=text.decode('utf-8'))
+        # docs = Document(page_content=text.decode('utf-8'))
         st.write(text)
         # Change UI
         st.text("You did it!")
