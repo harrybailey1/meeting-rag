@@ -15,7 +15,8 @@ question = st.text_area(
 warning_text = st.empty()
 
 # RAG placeholder
-rag = None
+if 'rag' not in st.session_state:
+    st.session_state.rag = None
 
 # Load VectorDB
 if load_button: 
@@ -24,18 +25,18 @@ if load_button:
         warning_text.empty()
         text = uploaded_file.read().decode()
         # Set up RAG instance
-        rag = RAG(text)
+        st.session_state.rag = RAG(text)
     else:
         # Update UI
         warning_text.text("MUST UPLOAD FILE!")
 
 # Process question
-if rag:
-    if uploaded_file and question:
+if uploaded_file and question:
+    if st.session_state.rag:
         # Update UI
         warning_text.empty()
         # Run process query on RAG instance
-        stream = rag.process_query(question)
+        stream = st.session_state.rag.process_query(question)
         # Write out stream on site
         st.write_stream(stream)
     else:
