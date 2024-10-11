@@ -7,14 +7,15 @@ OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 st.title("👨‍💻 Let's chat about the meeting!")
 uploaded_file = st.file_uploader("Upload a .txt file of the meeting transcript here", type=["txt"])
 load_button = st.button("Load meeting transcript", type="primary")
-# Placeholder for later
-rag = st.empty()
-warning_text = st.empty()
 question = st.text_area(
     "Please enter what you want to know from the meeting.",
     placeholder="Can you give me a short summary?",
     disabled=not uploaded_file,
 )
+warning_text = st.empty()
+
+# RAG placeholder
+rag = None
 
 # Load VectorDB
 if load_button: 
