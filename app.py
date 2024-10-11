@@ -36,11 +36,9 @@ if uploaded_file and question:
         # Update UI
         warning_text.empty()
         # Run process query on RAG instance
-        # stream = rag.process_query(question)
+        stream = rag.process_query(question)
         # Write out stream on site
-        for chunk in rag.process_query(question):
-            print(chunk)
-        st.write_stream(rag.process_query(question))
+        st.write_stream(stream)
     else:
         # Update UI
         warning_text.text("Please load the transcript first")
