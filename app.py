@@ -22,8 +22,7 @@ if load_button:
     if uploaded_file:
         # Update IU
         warning_text.empty()
-        # text = uploaded_file.getvalue()
-        text = uploaded_file.getvalue().decode()
+        text = uploaded_file.read().decode()
         # Set up RAG instance
         rag = RAG(text)
     else:
@@ -31,8 +30,8 @@ if load_button:
         warning_text.text("MUST UPLOAD FILE!")
 
 # Process question
-if uploaded_file and question:
-    if rag:
+if rag:
+    if uploaded_file and question:
         # Update UI
         warning_text.empty()
         # Run process query on RAG instance
